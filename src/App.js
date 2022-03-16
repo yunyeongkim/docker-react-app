@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          HELLO WORLD DOCKER COMPOSE
+          learn react
         </a>
       </header>
     </div>
