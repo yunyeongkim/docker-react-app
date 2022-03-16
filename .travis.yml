@@ -12,5 +12,15 @@ before_install:
 script:
  - docker run -e CI=true yunyeong93/docker-react-app npm run test -- --coverage
 
-after_success:
- - echo "Test Success"
+deploy:
+ edgd: true
+ provider: elasticbeanstalk
+ region: us-west-2 #절대장소 볼수있어요!~!!!aws 페이지에서
+ app: docker-react-app
+ env: DockerReactApp-env 
+ bucket_name: elasticbeanstalk-us-west-2-672550871522 #자동으로 생성된다 S3
+ bucket_path: docker-react-app 
+ on:
+  branch: master
+ access_key_id: $AWS_ACCESS_KEY
+ secret_access_key: $AWS_SECRET_KEY
