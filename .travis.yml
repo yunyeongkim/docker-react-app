@@ -13,7 +13,7 @@ script:
  - docker run -e CI=true yunyeong93/docker-react-app npm run test -- --coverage
 
 deploy:
- edgd: true
+ edge: true
  provider: elasticbeanstalk
  region: us-west-2 #절대장소 볼수있어요!~!!!aws 페이지에서
  app: docker-react-app
@@ -23,4 +23,4 @@ deploy:
  on:
   branch: master
  access_key_id: $AWS_ACCESS_KEY
- secret_access_key: $AWS_SECRECT_ACCESS_KEY
+ secret_access_key: $AWS_SECRECT_ACCESS_KEY햣
